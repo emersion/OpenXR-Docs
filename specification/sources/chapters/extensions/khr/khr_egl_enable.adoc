@@ -1,0 +1,60 @@
+include::../meta/XR_KHR_egl_enable.adoc[]
+
+*Last Modified Date*::
+    2019-10-28
+*IP Status*::
+    No known IP claims.
+*Contributors*::
+    Simon Ser, Status Research & Development GmbH +
+    Drew DeVault, Status Research & Development GmbH
+
+*Overview*
+
+*New Object Types*
+
+*New Flag Types*
+
+*New Enum Constants*
+
+elink:XrStructureType enumeration is extended with:
+
+* ename:XR_TYPE_GRAPHICS_BINDING_EGL_KHR
+
+*New Enums*
+
+*New Structures*
+
+The following structures are provided to supply supporting runtimes the
+necessary information required to work with the EGL API executing on certain
+operating systems.
+
+[open,refpage='XrGraphicsBindingEGLKHR',type='structs',desc='The graphics binding structure to be passed at session creation to use EGL',xrefs='xrCreateSession']
+--
+The slink:XrGraphicsBindingEGLKHR structure is defined as:
+
+include::../../../../generated/api/structs/XrGraphicsBindingEGLKHR.txt[]
+
+.Member Descriptions
+****
+* pname:type is the elink:XrStructureType of this structure.
+* pname:next is code:NULL or a pointer to an extension-specific structure.
+* pname:display is a valid sname:EGLDisplay.
+* pname:config is a valid sname:EGLConfig.
+* pname:context is a valid sname:EGLContext.
+****
+
+When creating an EGL-backed slink:XrSession, the application will provide a
+pointer to an slink:XrGraphicsBindingEGLKHR structure in the pname:next chain
+of the slink:XrSessionCreateInfo.
+
+include::../../../../generated/validity/structs/XrGraphicsBindingEGLKHR.txt[]
+--
+
+*New Functions*
+
+*Issues*
+
+*Version History*
+
+* Revision 1, 2019-10-28 (Simon Ser)
+** Initial draft
