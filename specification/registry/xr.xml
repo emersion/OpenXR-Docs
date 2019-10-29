@@ -77,6 +77,7 @@ maintained in the master branch of the Khronos OpenXR GitHub project.
         <type requires="EGL/egl.h" name="EGLDisplay"/>
         <type requires="EGL/egl.h" name="EGLConfig"/>
         <type requires="EGL/egl.h" name="EGLContext"/>
+        <type requires="EGL/egl.h" name="PFNEGLGETPROCADDRESSPROC"/>
         <type requires="GL/glxext.h" name="GLXFBConfig"/>
         <type requires="GL/glxext.h" name="GLXDrawable"/>
         <type requires="GL/glxext.h" name="GLXContext"/>
@@ -999,6 +1000,7 @@ maintained in the master branch of the Khronos OpenXR GitHub project.
         <type category="struct" name="XrGraphicsBindingEGLKHR" structextends="XrSessionCreateInfo">
             <member values="XR_TYPE_GRAPHICS_BINDING_EGL_KHR"><type>XrStructureType</type> <name>type</name></member>
             <member>const <type>void</type>* <name>next</name></member>
+            <member><type>PFNEGLGETPROCADDRESSPROC</type> <name>getProcAddress</name></member>
             <member><type>EGLDisplay</type> <name>display</name></member>
             <member><type>EGLConfig</type> <name>config</name></member>
             <member><type>EGLContext</type> <name>context</name></member>
